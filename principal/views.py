@@ -22,3 +22,7 @@ from django import forms
 #pantalla principal
 def Home(request):
     return render(request,'index.html')
+
+#configuracion para ver la lista de paises
+class ListadoPais(ListView):
+    model = Pais
