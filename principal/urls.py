@@ -5,15 +5,16 @@ from principal.views import *
 urlpatterns = [
     
     #rutas para la tabla pais
-    #ruta para ver la tabla de paises
     path('pais/', ListadoPais.as_view(template_name = "pais/index.html"), name='tablaPais'),
-    # La ruta 'detalles' en donde mostraremos una página con los detalles de un Categoria o registro 
     path('pais/detalle/<int:pk>', PaisDetalle.as_view(template_name = "pais/detalle.html"), name='detallePais'),
-    # La ruta 'actualizar' en donde mostraremos un formulario para actualizar un categoriao registro de la Base de Datos 
-    path('pais/editar/<int:pk>', PaisActualizar.as_view(template_name = "pais/actualizar.html"), name='actualizarPais'), 
-    # La ruta 'crear' en donde mostraremos un formulario para crear un nuevo Categoria o registro  
+    path('pais/editar/<int:pk>', PaisActualizar.as_view(template_name = "pais/actualizar.html"), name='actualizarPais'),   
     path('pais/crear', PaisCrear.as_view(template_name = "pais/crear.html"), name='crearPais'),
-    # La ruta 'eliminar' que usaremos para eliminar un Categoria o registro de la Base de Datos 
-    path('pais/eliminar/<int:pk>', PaisEliminar.as_view(), name='pais/eliminar.html')    
+    path('pais/eliminar/<int:pk>', PaisEliminar.as_view(), name='pais/eliminar.html'),
+    #rutas para la tabla departamento
+    path('departamento/', ListadoDep.as_view(template_name = "departamento/index.html"), name='tablaDep'),
+    path('departamento/detalle/<int:pk>', DepDetalle.as_view(template_name = "departamento/detalle.html"), name='detalleDep'),
+    path('departamento/editar/<int:pk>', DepActualizar.as_view(template_name = "departamento/actualizar.html"), name='actualizarDep'), 
+    path('departamento/crear', DepCrear.as_view(template_name = "departamento/crear.html"), name='crearDep'),
+    path('departamento/eliminar/<int:pk>', DepEliminar.as_view(), name='departamento/eliminar.html')      
 
 ]

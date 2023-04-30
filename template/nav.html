@@ -62,6 +62,16 @@
                                     <a class="nav-link" href="{% url 'crearPais' %}">Crear Pais</a>
                                 </nav>
                             </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pageDep" aria-expanded="false" aria-controls="pageDep">
+                                Departamento
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="pageDep" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionDep">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{% url 'tablaDep' %}">Lista Departamentos</a>
+                                    <a class="nav-link" href="{% url 'crearDep' %}">Crear Departamento</a>
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pageMenu" aria-expanded="false" aria-controls="pageMenu">
                                 Menu
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

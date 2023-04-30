@@ -36,7 +36,7 @@ class PaisCrear(SuccessMessageMixin, CreateView):
     success_message ='Pais creado correctamente'
      
     def get_success_url(self):        
-        return reverse('tablaPais') # Redireccionamos a la vista principal 'leer'
+        return reverse('tablaPais')
 
 #vista para ver un pais en particular
 class PaisDetalle (DetailView):
@@ -46,11 +46,11 @@ class PaisDetalle (DetailView):
 class  PaisActualizar(SuccessMessageMixin,UpdateView):
     model =  Pais
     form = Pais
-    fields = "__all__" # Le decimos a Django que muestre todos los campos de la tabla 'postres' de nuestra Base de Datos 
-    success_message = 'Pais Actualizado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre 
+    fields = "__all__" 
+    success_message = 'Pais Actualizado Correctamente !'
 
     def get_success_url(self):               
-        return reverse('tablaPais') # Redireccionamos a la vista principal 'leer'
+        return reverse('tablaPais')
 
 
 #configuracion para eliminar un pais
@@ -59,6 +59,44 @@ class PaisEliminar(SuccessMessageMixin, DeleteView):
     form = Pais
     fields = "__all__"     
  
-    # Redireccionamos a la página principal luego de eliminar un registro o postre
     def get_success_url(self): 
-        success_message = 'Pais Eliminado Correctamente !' # Mostramos este Mensaje luego de Editar un Postre
+        success_message = 'Pais Eliminado Correctamente !' 
+        
+#vista departamentos
+#configuracion para ver la lista de departamentos
+class ListadoDep(ListView):
+    model = Departamento
+
+#configuracion para crear un departamento
+class DepCrear(SuccessMessageMixin, CreateView):
+    model = Departamento
+    form = Departamento
+    fields = "__all__"
+    success_message ='Departamento creado correctamente'
+     
+    def get_success_url(self):        
+        return reverse('tablaDep')
+
+#vista para ver un departamento en particular
+class DepDetalle (DetailView):
+    model = Departamento
+
+#vista para actualizar un departamento
+class  DepActualizar(SuccessMessageMixin,UpdateView):
+    model =  Departamento
+    form = Departamento
+    fields = "__all__" 
+    success_message = 'Departamento Actualizado Correctamente !'
+
+    def get_success_url(self):               
+        return reverse('tablaDep') 
+
+
+#configuracion para eliminar un departamento
+class DepEliminar(SuccessMessageMixin, DeleteView): 
+    model = Departamento 
+    form = Departamento
+    fields = "__all__"     
+ 
+    def get_success_url(self): 
+        success_message = 'Departamento Eliminado Correctamente !'
