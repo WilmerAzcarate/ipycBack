@@ -4,35 +4,31 @@ from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 
 #importo el modelo de la base de datos models.py
-from principal.models import *
+from principal.models import Pais as table
 
 #Habilitamos los mensajes para class-based views
 from django.contrib.messages.views import SuccessMessageMixin
 
 
-#vista paises
-#configuracion para ver la lista de paises
+#vistas
 class ListadoPais(ListView):
-    model = Pais
+    model = table
 
-#configuracion para crear un pais
 class PaisCrear(SuccessMessageMixin, CreateView):
-    model = Pais
-    form = Pais
+    model = table
+    form = table
     fields = "__all__"
     success_message ='Pais creado correctamente'
      
     def get_success_url(self):        
         return reverse('tablaPais')
 
-#vista para ver un pais en particular
 class PaisDetalle (DetailView):
-    model = Pais
+    model = table
 
-#vista para actualizar un pais
 class  PaisActualizar(SuccessMessageMixin,UpdateView):
-    model =  Pais
-    form = Pais
+    model =  table
+    form = table
     fields = "__all__" 
     success_message = 'Pais Actualizado Correctamente !'
 
@@ -40,10 +36,9 @@ class  PaisActualizar(SuccessMessageMixin,UpdateView):
         return reverse('tablaPais')
 
 
-#configuracion para eliminar un pais
 class PaisEliminar(SuccessMessageMixin, DeleteView): 
-    model = Pais 
-    form = Pais
+    model = table 
+    form = table
     fields = "__all__"     
  
     def get_success_url(self): 
