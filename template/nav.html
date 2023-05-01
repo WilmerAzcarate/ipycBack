@@ -72,6 +72,16 @@
                                     <a class="nav-link" href="{% url 'crearDep' %}">Crear Departamento</a>
                                 </nav>
                             </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pageMuni" aria-expanded="false" aria-controls="pageMuni">
+                                Municipio
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="pageMuni" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionMuni">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{% url 'tablaMuni' %}">Lista Municipios</a>
+                                    <a class="nav-link" href="{% url 'crearMuni' %}">Crear Municipio</a>
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pageMenu" aria-expanded="false" aria-controls="pageMenu">
                                 Menu
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

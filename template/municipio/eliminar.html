@@ -48,21 +48,21 @@
                                   </thead>
                                   <tbody>  
                                 
-                                  {% for departamento in object_list %}
+                                  {% for municipio in object_list %}
                                     <tr>
-                                      <td>{{ departamento.id}}</td>
-                                      <td>{{ departamento.nombre }}</td>
-                                      <td>{{ departamento.codigo }}</td>
-                                      <td>{{ departamento.pais_id }}</td>
+                                      <td>{{ municipio.id}}</td>
+                                      <td>{{ municipio.nombre }}</td>
+                                      <td>{{ municipio.codigo }}</td>
+                                      <td>{{ municipio.departamento_id}}</td>
                                       <td>
                                 
                                         <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-                                        <form method="POST" action="eliminar/{{departamento.id}}">
+                                        <form method="POST" action="eliminar/{{municipio.id}}">
                                           {% csrf_token %}
                                           <div class="btn-group">
                                             
-                                            <a href="detalle/{{departamento.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                                            <a href="editar/{{departamento.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                            <a href="detalle/{{municipio.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                                            <a href="editar/{{municipio.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
                                             
                                             <!-- Este botón ejecuta el formulario para eliminar un registro o postre en la Base de datos -->
                                             <button class="btn btn-danger" onclick="return eliminar();" type="submit">
