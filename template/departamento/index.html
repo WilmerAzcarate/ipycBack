@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Pais- IPYC Admin</title>
+        <title>Departamento - IPYC Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="/static/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -33,15 +33,15 @@
 		    <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla Paises</h1>
+                        <h1 class="mt-4">Tabla Departamentos</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{%url 'index'%}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tabla Paises</li>
+                            <li class="breadcrumb-item active">Tabla Departamentos</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabla Paises
+                                Tabla Departamentos
                             </div>
                             <div class="card-body">
 								{# JS y jQuery Bootstrap #}
@@ -54,27 +54,29 @@
 									<thead>
 									<tr>
 										<th width="10%">ID</th>
-										<th>Pais</th>
+										<th>Departamento</th>
 										<th>Codigo</th>
+										<th>pais_id</th>
 										<th>Acciones</th>
 									</tr>
 									</thead>
 									<tbody>
 										<!-- Recorremos los objetos o registros que tenemos en nuestra tabla 'categoria' y los listamos -->
-										{% for pais in object_list %}
+										{% for departamento in object_list %}
 										<tr>
-											<td>{{ pais.id}}</td>
-											<td>{{ pais.nombre }}</td>
-											<td>{{ pais.codigo}}</td>
+											<td>{{ departamento.id}}</td>
+											<td>{{ departamento.nombre }}</td>
+											<td>{{ departamento.codigo}}</td>
+											<td>{{ departamento.pais_id}}</td>
 											<td>
 												<!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-												<form method="POST" action="eliminar/{{pais.id}}">
+												<form method="POST" action="eliminar/{{departamento.id}}">
 													{% csrf_token %}
 													<div class="btn-group">
 										
 													<!-- Creamos 3 botones que son ver, Editar y Eliminar, nos sirven para gestionar nuestros registros o postres -->
-													<a href="detalle/{{pais.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-													<a href="editar/{{pais.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+													<a href="detalle/{{departamento.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+													<a href="editar/{{departamento.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
 													<button class="btn btn-danger" onclick="return eliminar();" type="submit">
 														Eliminar
 													</button>

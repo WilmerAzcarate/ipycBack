@@ -1,5 +1,7 @@
 from django.contrib import admin
-from principal.models import *
+from .models import *
 
 # Register your models here.
 admin.site.register(Pais)
+admin.site.register(Departamento)
+admin.site.register(Municipio)
