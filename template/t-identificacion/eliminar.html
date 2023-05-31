@@ -25,15 +25,15 @@
 		    <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tabla t-oferta</h1>
+                        <h1 class="mt-4">t-ingrediente</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{%url 'index'%}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tabla t-oferta</li>
+                            <li class="breadcrumb-item active">t-ingrediente</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabla t-oferta
+                                t-ingrediente
                             </div>
                             <div class="card-body">
 								
@@ -41,27 +41,26 @@
                                   <thead>
                                     <tr>
                                       <th width="35%">ID</th>
-                                      <th>id</th>
-                                      <th>nombre</th>
-                                      <th>description</th>
+                                      <th>Nombre</th>
+                                      <th>descripcion</th>
                                     </tr>
                                   </thead>
                                   <tbody>  
                                 
-                                  {% for t-oferta in object_list %}
+                                  {% for t-ingrediente in object_list %}
                                     <tr>
-                                      <td>{{ t-oferta.id}}</td>
-                                      <td>{{ t-oferta.nomtbre }}</td>
-                                      <td>{{ t-oferta.descripcion }}</td>
+                                      <td>{{ t-ingrediente.id}}</td>
+                                      <td>{{ t-ingrediente.nombre }}</td>
+                                      <td>{{ t-ingrediente.descripcion }}</td>
                                       <td>
                                 
                                         <!-- Usaremos un formulario que realizará la tarea de eliminar un registro o postre desde la misma tabla HTML -->                        
-                                        <form method="POST" action="eliminar/{{t-receta.id}}">
+                                        <form method="POST" action="eliminar/{{pais.id}}">
                                           {% csrf_token %}
                                           <div class="btn-group">
                                             
-                                            <a href="detalle/{{t-oferta.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
-                                            <a href="editar/{{t-oferta.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                            <a href="detalle/{{pais.id}}" title="Ver" type="button" class="btn btn-success">Ver </a>
+                                            <a href="editar/{{pais.id}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
                                             
                                             <!-- Este botón ejecuta el formulario para eliminar un registro o postre en la Base de datos -->
                                             <button class="btn btn-danger" onclick="return eliminar();" type="submit">
