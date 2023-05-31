@@ -39,7 +39,8 @@ class  PaisActualizar(SuccessMessageMixin,UpdateView):
 class PaisEliminar(SuccessMessageMixin, DeleteView): 
     model = table 
     form = table
-    fields = "__all__"     
+    fields = "__all__" 
+    success_message = 'Pais Eliminado Correctamente !'    
  
     def get_success_url(self): 
-        success_message = 'Pais Eliminado Correctamente !' 
+        return reverse('tablaPais') 

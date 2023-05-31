@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Login - SB Admin</title>
-        <link href="/static/css/styles.css/" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class=" bg-primary">
 
-        <section class="vh-100">
-            <div class="container-fluid h-custom">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                    class="img-fluid" alt="Sample image">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>IpycAdmin</title>
+    <link href="/static/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-primary">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header">
+                                    <h3 class="text-center font-weight-light my-4">Login</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form method="POST" action="{% url 'login' %}">
+                                        {% csrf_token %}
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="username" type="text"
+                                                placeholder="ipycuser" />
+                                            <label for="username">Username</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="inputPassword" type="password"
+                                                placeholder="Password" />
+                                            <label for="inputPassword">Password</label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox"
+                                                value="" />
+                                            <label class="form-check-label" for="inputRememberPassword">Remember
+                                                Password</label>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <a class="small" href="#">Forgot Password?</a>
+                                            <a class="btn btn-primary" href="{% url 'index' %}">Login</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <div class="small"><a href="#">Need an account? Sign up!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form  method="POST" action="{% url 'login' %}">
-                    {% csrf_token %}
-                    
-          
-                    <div class="divider d-flex align-items-center my-4">
-                      <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
-                    </div>
-          
-                    <!-- Email input -->
-                    <div class="form-outline mb-4" data-validate = "Enter username"> 
-                        <label class="form-label" for="password">Usuario </label>           
-                        <input class="form-control form-control-lg"   type="text" name="username" placeholder="User name">
-                                          
-                    </div>
-          
-                    <!-- Password input -->
-                    <div lass="form-outline mb-4" data-validate="Enter password">
-                        <label class="form-label" for="form3Example4">Contraseña</label>           
-                        <input class="form-control form-control-lg"   type="password" name="password" placeholder="Password"> 
-                                              
-                    </div>
-          
-                    <div class="d-flex justify-content-between align-items-center">
-                      <!-- Checkbox -->
-                      <div class="form-check mb-0">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                        <label class="form-check-label" for="form2Example3">
-                          Recordar contraseña
-                        </label>
-                      </div>
-                      <a href="#" class="text-body">¿Olvido la Contraseña?</a>
-                    </div>
-          
-                    <div class="text-lg-start mt-4 pt-2">
-                        <button  style="padding-left: 2.5rem; padding-right: 2.5rem;" class="btn btn-primary btn-lg">
-                            Login
-                            </button>
-                      <p class="small fw-bold mt-2 pt-1 mb-0">¿No tienes una cuenta? <a href="#"
-                          class="link-danger">Registrate</a></p>
-                    </div>
-          
-                  </form>
-                </div>
-              </div>
-            </div>
-          
-          </section>
+            </main>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>

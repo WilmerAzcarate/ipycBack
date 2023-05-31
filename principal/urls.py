@@ -7,6 +7,6 @@ urlpatterns = [
     #rutas para las vistas de todos los cruds
     path('forms/',include(forms_urls)),
     #rutas para la api
-    path('api/',include(api_urls))
+    path('api/',include(api_urls)),
 
 ]
